@@ -1,0 +1,1 @@
+{"lastDeploymentHandler":"com.aws.lambda.schedular.DBSchedular","lastInvokeHandler":null,"handlerMetadata":{"com.aws.lambda.schedular.DBSchedular":{"deployment":{"regionId":"us-east-1","awsLambdaFunctionName":"DBSchedular","awsIamRoleName":"DBSchedularRole","awsS3BucketName":"lambda-demo-container","memory":0,"timeout":0},"invoke":null}}}
