@@ -1,0 +1,23 @@
+{
+    "currentIntent": {
+        "name": "UpdateTask",
+        "slots": {
+            "effortDuration": null,
+            "taskInfo": "Tfs",
+            "effortRemaining": null,
+            "taskStatus": null
+        },
+        "confirmationStatus": "None"
+    },
+    "bot": {
+        "name": "SprintTaskUpdater",
+        "alias": null,
+        "version": "11"
+    },
+    "sessionAttributes": null,
+    "userId": "1496202933756693",
+    "inputTranscript": "Tfs",
+    "invocationSource": "DialogCodeHook",
+    "outputDialogMode": "Text",
+    "messageVersion": "1.0"
+}
