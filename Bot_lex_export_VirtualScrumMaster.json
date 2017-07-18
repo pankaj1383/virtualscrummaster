@@ -1,0 +1,307 @@
+{
+  "name": "SprintTaskUpdater",
+  "description": null,
+  "intents": [
+    {
+      "intentName": "UpdateTask",
+      "intentVersion": "50"
+    },
+    {
+      "intentName": "UserIntroduction",
+      "intentVersion": "22"
+    }
+  ],
+  "clarificationPrompt": {
+    "messages": [
+      {
+        "contentType": "PlainText",
+        "content": "I'm sorry, I don't understand! Sometimes I have an easier time with a few simple keywords with complete statement. Can you please try that way?"
+      }
+    ],
+    "maxAttempts": 2,
+    "responseCard": null
+  },
+  "abortStatement": {
+    "messages": [
+      {
+        "contentType": "PlainText",
+        "content": "Sorry, I could not understand. Goodbye."
+      }
+    ],
+    "responseCard": null
+  },
+  "status": "READY",
+  "failureReason": null,
+  "lastUpdatedDate": "2017-07-14T20:32:17.799Z",
+  "createdDate": "2017-07-14T20:31:54.872Z",
+  "idleSessionTTLInSeconds": 60,
+  "voiceId": "Joanna",
+  "checksum": "fcd95e23-4fc9-407b-ac7f-f311eafd1b12",
+  "version": "26",
+  "locale": "en-US",
+  "childDirected": false,
+  "dependencies": {
+    "intents": [
+      {
+        "name": "UpdateTask",
+        "description": null,
+        "slots": [
+          {
+            "name": "taskInfo",
+            "description": null,
+            "slotConstraint": "Required",
+            "slotType": "AMAZON.Language",
+            "slotTypeVersion": null,
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "What task you want to log efforts for?"
+                },
+                {
+                  "contentType": "PlainText",
+                  "content": "Which task you want me to update for you?"
+                },
+                {
+                  "contentType": "PlainText",
+                  "content": "What task you were working on?"
+                }
+              ],
+              "maxAttempts": 3,
+              "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\"}"
+            },
+            "priority": 2,
+            "sampleUtterances": [],
+            "responseCard": null
+          },
+          {
+            "name": "effortDuration",
+            "description": null,
+            "slotConstraint": "Required",
+            "slotType": "AMAZON.DURATION",
+            "slotTypeVersion": null,
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "How much time have you invested?"
+                },
+                {
+                  "contentType": "PlainText",
+                  "content": "How long did you worked for {taskInfo} task?"
+                }
+              ],
+              "maxAttempts": 3,
+              "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\"}"
+            },
+            "priority": 3,
+            "sampleUtterances": [],
+            "responseCard": null
+          },
+          {
+            "name": "taskStatus",
+            "description": null,
+            "slotConstraint": "Required",
+            "slotType": "taskStatus",
+            "slotTypeVersion": "4",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "What is the current task status?"
+                },
+                {
+                  "contentType": "PlainText",
+                  "content": "Whats is the current status?"
+                }
+              ],
+              "maxAttempts": 3,
+              "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"imageUrl\":\"http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Status-mail-task-icon.png\",\"subTitle\":\"What is the current task status?\",\"title\":\"Task Status\",\"buttons\":[{\"text\":\"In-Progress\",\"value\":\"In-Progress\"},{\"text\":\"Completed\",\"value\":\"Completed\"},{\"text\":\"Defined\",\"value\":\"Defined\"}]}]}"
+            },
+            "priority": 4,
+            "sampleUtterances": [],
+            "responseCard": null
+          },
+          {
+            "name": "effortRemaining",
+            "description": null,
+            "slotConstraint": "Required",
+            "slotType": "AMAZON.DURATION",
+            "slotTypeVersion": null,
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "How much to do time is still required?"
+                },
+                {
+                  "contentType": "PlainText",
+                  "content": "How much more time is still required?"
+                },
+                {
+                  "contentType": "PlainText",
+                  "content": "How much more time is still needed?"
+                }
+              ],
+              "maxAttempts": 3,
+              "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\"}"
+            },
+            "priority": 5,
+            "sampleUtterances": [],
+            "responseCard": null
+          }
+        ],
+        "sampleUtterances": [
+          "I want to log task efforts",
+          "I want to record task efforts",
+          "I want to log efforts for {taskInfo} task",
+          "I want to record efforts for {taskInfo} task",
+          "Log efforts for {taskInfo} task",
+          "Log efforts for {taskInfo}",
+          "Record efforts for {taskInfo}",
+          "Log time for {taskInfo}",
+          "Log time for {taskInfo} task",
+          "Log {effortDuration} of effort for {taskInfo}",
+          "Log {effortDuration} of effort for {taskInfo} task",
+          "I want to log {effortDuration} of effort for {taskInfo}",
+          "Log efforts",
+          "Log efforts for {taskInfo} work",
+          "Log efforts for {taskInfo} UI",
+          "Hi",
+          "Hey",
+          "Hey How are you",
+          "Hello",
+          "Good Morning",
+          "Yes I want to update the task",
+          "Yes",
+          "Update my task",
+          "Please update task",
+          "Task update",
+          "Whats up",
+          "Update {effortDuration} of effort for {taskInfo}",
+          "Update {effortDuration} in {taskInfo} task"
+        ],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "We have updated your task"
+            }
+          ],
+          "responseCard": null
+        },
+        "dialogCodeHook": {
+          "uri": "arn:aws:lambda:us-east-1:709159150657:function:TaskUpdaterJavaHook",
+          "messageVersion": "1.0"
+        },
+        "fulfillmentActivity": {
+          "type": "CodeHook",
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:709159150657:function:TaskUpdaterJavaHook",
+            "messageVersion": "1.0"
+          }
+        },
+        "parentIntentSignature": null,
+        "lastUpdatedDate": "2017-07-14T20:31:05.667Z",
+        "createdDate": "2017-07-14T20:31:05.667Z",
+        "version": "50",
+        "checksum": "0af7a403-3146-4339-a3dc-d19e3e008ca5"
+      },
+      {
+        "name": "UserIntroduction",
+        "description": null,
+        "slots": [
+          {
+            "name": "apiKey",
+            "description": null,
+            "slotConstraint": "Required",
+            "slotType": "AMAZON.Language",
+            "slotTypeVersion": null,
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "what is your api key?"
+                }
+              ],
+              "maxAttempts": 2,
+              "responseCard": null
+            },
+            "priority": 2,
+            "sampleUtterances": [],
+            "responseCard": null
+          },
+          {
+            "name": "activationId",
+            "description": null,
+            "slotConstraint": "Required",
+            "slotType": "AMAZON.NUMBER",
+            "slotTypeVersion": null,
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "What is the activation number you received in the welcome email?"
+                },
+                {
+                  "contentType": "PlainText",
+                  "content": "Mention activation number you received in welcome email"
+                },
+                {
+                  "contentType": "PlainText",
+                  "content": "May I know your activation number?"
+                }
+              ],
+              "maxAttempts": 3,
+              "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\"}"
+            },
+            "priority": 1,
+            "sampleUtterances": [],
+            "responseCard": null
+          }
+        ],
+        "sampleUtterances": [
+          "Get started",
+          "activation number is {activationId}"
+        ],
+        "dialogCodeHook": {
+          "uri": "arn:aws:lambda:us-east-1:709159150657:function:ScrumUserRegistration",
+          "messageVersion": "1.0"
+        },
+        "fulfillmentActivity": {
+          "type": "CodeHook",
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:709159150657:function:ScrumUserRegistration",
+            "messageVersion": "1.0"
+          }
+        },
+        "parentIntentSignature": null,
+        "lastUpdatedDate": "2017-07-14T14:53:45.909Z",
+        "createdDate": "2017-07-14T14:53:45.909Z",
+        "version": "22",
+        "checksum": "7edb8efd-cd03-4cdb-b45f-f454fc420003"
+      }
+    ],
+    "slotTypes": [
+      {
+        "name": "taskStatus",
+        "description": "Status value of tasks",
+        "enumerationValues": [
+          {
+            "value": "Defined"
+          },
+          {
+            "value": "Completed"
+          },
+          {
+            "value": "In-Progress"
+          }
+        ],
+        "lastUpdatedDate": "2017-07-14T16:35:55.453Z",
+        "createdDate": "2017-07-14T16:35:55.453Z",
+        "version": "4",
+        "checksum": null
+      }
+    ]
+  }
+}
