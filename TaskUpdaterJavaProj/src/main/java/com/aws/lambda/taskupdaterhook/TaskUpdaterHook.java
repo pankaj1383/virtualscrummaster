@@ -71,9 +71,6 @@ public class TaskUpdaterHook implements RequestHandler<LexRequest, LexResponse> 
 
 	private void init() {
 		scrumInterface = new Rally();
-		// TODO api key hardcoded, get it from DynamoDB
-		// apiKey = "_Dl8a4ejcQ4WTcq4ExdxbvF3mb1d2eUsNo6v43LThc";
-
 	}
 
 	@Override
