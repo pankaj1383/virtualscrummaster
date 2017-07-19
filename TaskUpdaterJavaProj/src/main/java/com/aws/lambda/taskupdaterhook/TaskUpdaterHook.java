@@ -83,24 +83,6 @@ public class TaskUpdaterHook implements RequestHandler<LexRequest, LexResponse> 
 
 			String reqJsonStr = getRequestObjJson(input);
 			Logger.log("in handleRequest method, request Json new impl: " + reqJsonStr);
-			//
-			// if (true) {
-			// LexResponse resp = getLexResponseForDelegate(null, (LexRequest)
-			// input);
-			// Map<String, String> sessionVals = ((LexRequest)
-			// input).getSessionAttributes();
-			// if (null == sessionVals) {
-			// sessionVals = new HashMap<String, String>();
-			// }
-			// String oldVal = sessionVals.get("testSessVal");
-			// int oldIntVal = null == oldVal ? 0 : Integer.parseInt(oldVal);
-			// oldIntVal++;
-			// sessionVals.put("testSessVal", "" + oldIntVal);
-			// resp.setSessionAttributes(sessionVals);
-			//
-			// return resp;
-			// }
-
 			Logger.log("lex requ obj= " + input);
 			LexRequest requestObject = null;
 
